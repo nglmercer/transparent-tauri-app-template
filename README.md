@@ -86,7 +86,7 @@ If you want ignore cursor events on the element, you need use API `setIgnoreCurs
 
 ```JavaScript
 import { appWindow } from '@tauri-apps/api/window';
-await appWindow.setIgnoreCursorEvents(true);
+await appWindow.setIgnoreCursorEvents(false);
 ```
 
 Or you can use API `set_ignore_cursor_events( &self, ignore: bool ) -> Result<(), ExternalError>` in Rust.

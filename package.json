@@ -10,8 +10,6 @@
     "tauri": "tauri"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "@tauri-apps/api": "^1.4.0"
   },
   "devDependencies": {

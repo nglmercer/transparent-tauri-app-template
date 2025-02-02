@@ -14,7 +14,7 @@ fn main() {
         .invoke_handler(tauri::generate_handler![greet])
         .setup(|app| {
             let window = app.get_window("main").unwrap();
-            window.set_ignore_cursor_events(true)
+            window.set_ignore_cursor_events(false)
                     .expect("error setting ignore cursor events");
             Ok(())
         })
