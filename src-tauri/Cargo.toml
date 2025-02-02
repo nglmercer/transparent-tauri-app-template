@@ -15,6 +15,7 @@ tauri-build = { version = "1.4", features = [] }
 [dependencies]
 tauri = { version = "1.4", features = [ "system-tray", "window-start-dragging", "shell-open", "custom-protocol"] }
 serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1", features = ["full"] }
 serde_json = "1.0"
 
 [features]

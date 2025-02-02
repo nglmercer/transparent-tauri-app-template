@@ -13,7 +13,28 @@
 :root {
   color-scheme: light dark;
 }
+footer:hover {
+  background-color: #000000 !important;
+}
+.draggable-area {
+      -webkit-app-region: drag; /* Permite arrastrar la ventana */
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: move;
+    }
 
+    /* Efecto de desenfoque */
+    .blur-effect {
+      filter: blur(5px);
+      transition: filter 0.3s ease;
+    }
+
+    /* Desactivar arrastre en elementos específicos */
+    button, input, textarea {
+      -webkit-app-region: no-drag; /* No permite arrastrar estos elementos */
+    }
   </style>
 
 
@@ -35,12 +56,10 @@
     <div id="storecontainer">
 
     </div>
-    <footer style="color: white; text-align: center; padding: 8px; position: absolute; width: 100%; bottom: 0;">
+    <footer class="draggable-area " style="color: white; text-align: center; padding: 8px; position: absolute; width: 100%; bottom: 0;">
       <nav style="margin-top: 10px;">
         <div id="app"></div>
       </nav>
   </footer>
-
-
   </body>
 </html>

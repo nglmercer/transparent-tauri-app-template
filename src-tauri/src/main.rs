@@ -1,6 +1,6 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 use std::sync::{Arc, Mutex};
-use tauri::{Manager, SystemTray, SystemTrayMenu, SystemTrayMenuItem, CustomMenuItem, SystemTrayEvent};
+use tauri::{Manager, SystemTray, SystemTrayMenu, SystemTrayMenuItem, CustomMenuItem, SystemTrayEvent, WindowEvent};
 
 fn main() {
     // Estado interno para rastrear el estado de las opciones
@@ -62,6 +62,22 @@ fn main() {
             let window = app.get_window("main").unwrap();
             window.set_ignore_cursor_events(false).unwrap();
             window.set_always_on_top(false).unwrap();
+
+            // Clonar la ventana para usarla en el closure
+            let window_clone = window.clone();
+
+            // Manejar el evento de cierre de la ventana
+            window.on_window_event(move |event| {
+                match event {
+                    WindowEvent::CloseRequested { api, .. } => {
+                        // Evitar que la ventana se cierre y simplemente ocultarla
+                        api.prevent_close();
+                        window_clone.hide().unwrap();
+                    }
+                    _ => {}
+                }
+            });
+
             Ok(())
         })
         .run(tauri::generate_context!())
