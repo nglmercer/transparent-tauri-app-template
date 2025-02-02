@@ -3,11 +3,11 @@
     "beforeDevCommand": "npm run dev",
     "beforeBuildCommand": "npm run build",
     "devPath": "http://localhost:1420",
-    "distDir": "../dist",
+    "distDir": "../public",
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "transparent-tauri-app-template",
+    "productName": "overlay-multilang",
     "version": "0.0.0"
   },
   "tauri": {
@@ -24,7 +24,7 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.tauri.dev",
+      "identifier": "com.overlay-multilang.dev",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
@@ -40,12 +40,17 @@
       {
         "fullscreen": false,
         "resizable": true,
-        "title": "transparent-tauri-app-template",
+        "title": "overlay-multilang",
         "width": 800,
         "height": 600,
         "decorations": false,
-        "transparent": true
+        "transparent": true,
+        "url": "index.html"
       }
-    ]
+    ],
+    "systemTray": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true
+    }
   }
 }
