@@ -31,10 +31,6 @@ footer:hover {
       transition: filter 0.3s ease;
     }
 
-    /* Desactivar arrastre en elementos específicos */
-    button, input, textarea {
-      -webkit-app-region: no-drag; /* No permite arrastrar estos elementos */
-    }
   </style>
 
 
@@ -56,7 +52,7 @@ footer:hover {
     <div id="storecontainer">
 
     </div>
-    <footer class="draggable-area " style="color: white; text-align: center; padding: 8px; position: absolute; width: 100%; bottom: 0;">
+    <footer class="draggable-area " data-tauri-drag-region style="color: white; text-align: center; padding: 8px; position: absolute; width: 100%; bottom: 0;">
       <nav style="margin-top: 10px;">
         <div id="app"></div>
       </nav>
